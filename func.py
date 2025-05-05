@@ -27,6 +27,7 @@ class AccountMaker:
         if self.proxy: 
             options = Options()
             options.add_argument('--proxy-server=%s' % self.proxy)
+            print(f"Using proxy: {self.proxy}")
             driver = webdriver.Chrome(options=options, service=s)
         else:
             driver = webdriver.Chrome(service=s)
@@ -43,7 +44,7 @@ class AccountMaker:
             EC.presence_of_element_located((By.XPATH, "/html/body/div[3]/div[1]/div/div[2]/div/div/div/div/div[2]/div/button[2]"))
             )
             cookies_prompt.click()
-        finally:
+        except:
             print("Cookies prompt not found")
 
 
@@ -89,7 +90,7 @@ class AccountMaker:
         month.click()
 
         #day
-        day = driver.find_element(By.XPATH, f"/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[1]/div/section/main/div/div/div[1]/div/div/div[4]/div/div/span/span[2]/select/option[{random.randint(1,31)}]")
+        day = driver.find_element(By.XPATH, f"/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[1]/div/section/main/div/div/div[1]/div/div/div[4]/div/div/span/span[2]/select/option[{random.randint(1,29)}]")
         day.click()
 
         #year
@@ -109,7 +110,7 @@ class AccountMaker:
         driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[1]/div/section/main/div/div/div[1]/div/div[2]/form/div/div[2]').click()
 
 
-
+        print(firstname,username,password,email)
         #temp
         input()
         driver.quit()
