@@ -17,3 +17,9 @@ The script hasn't actually been tested using real proxies because the ones i hav
 Oh yeah and you need google-chrome and chromedriver somewhere on your pc.
 
 The password in the config.yml file will be used for all the accounts you create. Theres already a default password which gets through the password requirements but you can change it.
+
+## Usage
+
+1) Install requirements stored in `requirements.txt`
+2) Get google-chrome and chromedrivers (idk what the equivilent is on windows)
+3) Run `main.py`
